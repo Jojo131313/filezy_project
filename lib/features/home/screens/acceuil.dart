@@ -95,9 +95,12 @@ class StorageInfoCard extends StatelessWidget {
           children: [
             Column(
               children: [
-                Icon(
-                  Icons.folder,
-                  color: Colors.orange,
+                Padding(
+                  padding: EdgeInsets.only(right: 300),
+                  child: Icon(
+                    Icons.folder,
+                    color: Colors.orange,
+                  ),
                 ),
               ],
             ),
