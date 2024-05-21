@@ -4,6 +4,7 @@ class Acceuil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 3, 107, 244),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 3, 107, 244),
         title: Column(
@@ -16,7 +17,7 @@ class Acceuil extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 250),
+                  padding: EdgeInsets.only(left: 270),
                   child: Icon(
                     Icons.notifications,
                     color: Colors.white,
@@ -27,12 +28,18 @@ class Acceuil extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          StorageInfoCard(),
-          CategoryIcons(),
-          RecentFiles(),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+        child: Column(
+          children: [
+            StorageInfoCard(),
+            CategoryIcons(),
+            RecentFiles(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -97,26 +104,39 @@ class StorageInfoCard extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(right: 300),
-                  child: Icon(
-                    Icons.folder,
-                    color: Colors.orange,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Icon(
+                          Icons.folder_outlined,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        child: ColoredBox(
+                          color: Colors.white,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text("Clear Storage"),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              elevation: 0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Clear Storage',
-                  style: TextStyle(
-                    color: Colors.black,
-                    backgroundColor: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
             ),
             SizedBox(height: 8.0),
             LinearProgressIndicator(

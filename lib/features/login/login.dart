@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 0, 140, 255),
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 0, 140, 255),
           title: Row(
@@ -31,6 +31,10 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         body: Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30))),
           padding: EdgeInsets.all(30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +137,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             border: InputBorder.none),
                       ),
                     ),
-                    Icon(Icons.remove_red_eye),
                   ],
                 ),
               ),
@@ -172,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 50,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(50),
+                          borderRadius: BorderRadius.circular(10),
                           color: const Color.fromARGB(255, 255, 255, 255)),
                       child: Center(
                         child: Text(
@@ -191,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 50,
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey),
-                              borderRadius: BorderRadius.circular(50),
+                              borderRadius: BorderRadius.circular(10),
                               color: const Color.fromARGB(255, 0, 140, 255)),
                           child: Center(
                             child: Text(
