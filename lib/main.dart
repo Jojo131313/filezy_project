@@ -12,8 +12,8 @@ class FilezyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: Acceuil(),
+    return MaterialApp(
+      home: StartPage(),
       debugShowCheckedModeBanner: false,
     );
   }

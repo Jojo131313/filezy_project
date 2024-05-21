@@ -1,7 +1,7 @@
 import 'package:filezy_project/features/home/screens/acceuil.dart';
 import 'package:filezy_project/features/login/login.dart';
 import 'package:flutter/material.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -14,25 +14,27 @@ class _StartPageState extends State<StartPage> {
   @override
   void initState() {
     Duration duration = Duration(milliseconds: 100);
+
+    method();
     // Future.delayed(duration, method);
 
     super.initState();
   }
 
-//   void method() async {
-// // Obtain shared preferences.
-//     final prefs = await SharedPreferences.getInstance();
+  void method() async {
+// Obtain shared preferences.
+    final prefs = await SharedPreferences.getInstance();
 
-//     int counter = prefs.getInt('counter') ?? 0;
+    int counter = prefs.getInt('counter') ?? 0;
 
-//     counter++;
+    counter++;
 
-//     await prefs.setInt('counter', counter);
+    await prefs.setInt('counter', counter);
 
-//     print(counter);
+    print(counter);
 
-//     navigateHome(counter == 1);
-//   }
+    navigateHome(counter == 1);
+  }
 
   void navigateHome(bool firstNav) {
     if (firstNav) {

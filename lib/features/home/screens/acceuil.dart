@@ -189,20 +189,24 @@ class RecentFiles extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
+          Text(
+            "Recent Files",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
           FileItem(
             icon: Icons.music_note,
             name: 'Melancholy memories.mp3',
-            date: '16 Aug 2023',
+            date: '25Mb 10 Aug 2023',
           ),
           FileItem(
             icon: Icons.videocam,
             name: 'Beyond the horizon.mp4',
-            date: '25 Sep 2022',
+            date: '2,5Gb 25 Sep 2022',
           ),
           FileItem(
             icon: Icons.music_note,
             name: 'Lost in the woods.mp3',
-            date: '17 Jul 2022',
+            date: '40Mb 17 Jul 2022',
           ),
         ],
       ),
@@ -221,7 +225,10 @@ class FileItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(icon, color: Colors.blue),
-      title: Text(name),
+      title: Text(
+        name,
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
       subtitle: Text(date),
       trailing: Icon(Icons.more_vert),
     );

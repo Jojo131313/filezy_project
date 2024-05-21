@@ -101,9 +101,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          border:
-                              Border(bottom: BorderSide(color: Colors.grey))),
                       child: TextField(
                         decoration: InputDecoration(
                             hintText: "Username",
@@ -111,23 +108,32 @@ class _LoginScreenState extends State<LoginScreen> {
                             border: InputBorder.none),
                       ),
                     ),
-                    Text(
-                      "Password",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 60),
+              Text(
+                "Password",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              // add some space between the buttons and input zone
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 234, 229, 229),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: <Widget>[
                     Container(
                       padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          border:
-                              Border(bottom: BorderSide(color: Colors.grey))),
                       child: TextField(
                         decoration: InputDecoration(
-                            icon: Icon(Icons.remove_red_eye_sharp),
                             hintText: "Password",
                             hintStyle: TextStyle(color: Colors.grey),
                             border: InputBorder.none),
                       ),
-                    )
+                    ),
+                    Icon(Icons.remove_red_eye),
                   ],
                 ),
               ),
