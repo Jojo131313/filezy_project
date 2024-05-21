@@ -15,7 +15,7 @@ class Acceuil extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(300),
+                  padding: EdgeInsets.only(left: 250),
                   child: Icon(Icons.notifications),
                 ),
               ],
