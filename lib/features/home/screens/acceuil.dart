@@ -46,8 +46,8 @@ class Acceuil extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_filled,
-              color: Colors.grey,
-              size: 30,
+              color: Color.fromARGB(255, 33, 150, 243),
+              size: 25,
             ),
             label: '',
           ),
@@ -55,7 +55,7 @@ class Acceuil extends StatelessWidget {
             icon: Icon(
               Icons.folder,
               color: Colors.grey,
-              size: 30,
+              size: 25,
             ),
             label: '',
           ),
@@ -63,7 +63,7 @@ class Acceuil extends StatelessWidget {
             icon: Icon(
               Icons.add_box,
               color: Colors.blue,
-              size: 45,
+              size: 40,
             ),
             label: '',
           ),
@@ -71,7 +71,7 @@ class Acceuil extends StatelessWidget {
             icon: Icon(
               Icons.settings,
               color: Colors.grey,
-              size: 30,
+              size: 25,
             ),
             label: '',
           ),
@@ -79,7 +79,7 @@ class Acceuil extends StatelessWidget {
             icon: Icon(
               Icons.person_sharp,
               color: Colors.grey,
-              size: 30,
+              size: 25,
             ),
             label: '',
           ),
@@ -119,34 +119,49 @@ class StorageInfoCard extends StatelessWidget {
                           size: 20,
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                        child: ColoredBox(
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(5),
+                                topRight: Radius.circular(5))),
+                        child: Container(
+                          margin: EdgeInsets.only(left: 200),
+                          height: 20,
+                          width: 100,
                           color: Colors.white,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Clear Storage"),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              elevation: 0,
-                            ),
+                          child: Text(
+                            "Clear storage",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 8.0),
+            SizedBox(height: 15),
             LinearProgressIndicator(
               value: 0.9,
               backgroundColor: const Color.fromARGB(255, 224, 224, 224),
               color: Colors.orange,
+              minHeight: 7,
+              borderRadius: BorderRadius.circular(5),
             ),
             Text(
               "90Gb",
               style: TextStyle(color: Colors.white),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  "100Gb",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
             Text(
               'You used 90% of your storage',
@@ -172,9 +187,10 @@ class CategoryIcons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CategoryIcon(icon: Icons.description, label: 'Docs'),
-          CategoryIcon(icon: Icons.photo, label: 'Photos'),
+          CategoryIcon(
+              icon: Icons.photo_size_select_actual_rounded, label: 'Photos'),
           CategoryIcon(icon: Icons.music_note, label: 'Music'),
-          CategoryIcon(icon: Icons.videocam, label: 'Videos'),
+          CategoryIcon(icon: Icons.ondemand_video_outlined, label: 'Videos'),
         ],
       ),
     );

@@ -1,5 +1,5 @@
+import 'package:filezy_project/features/home/screens/acceuil.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,6 +9,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  Future<void> _navigateToHome() async {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Acceuil()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -19,165 +26,173 @@ class _LoginScreenState extends State<LoginScreen> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/icons/32.png",
-                  width: 35, height: 35), // adjust the size as needed
-              SizedBox(width: 8), // add some space between the image and text
-              Text("Filezy",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold)),
+              Image.asset("assets/icons/32.png", width: 35, height: 35),
+              const SizedBox(width: 8),
+              const Text(
+                "Filezy",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           ),
         ),
         body: Container(
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30), topRight: Radius.circular(30))),
-          padding: EdgeInsets.all(30),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
+          padding: const EdgeInsets.all(30),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 20),
+                    margin: const EdgeInsets.only(left: 20),
                     decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: OutlinedButton(
                       style: ButtonStyle(
-                          side: MaterialStateProperty.all(BorderSide(
-                              color: const Color.fromARGB(255, 0, 140, 255))),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                        side: MaterialStateProperty.all(
+                          const BorderSide(
+                              color: Color.fromARGB(255, 0, 140, 255)),
+                        ),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
-                          ))),
+                          ),
+                        ),
+                      ),
                       onPressed: () {
-                        print('erty');
+                        print('Login button pressed');
                       },
-                      child: Text(
+                      child: const Text(
                         "Login",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 255, 255, 255)),
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                     child: OutlinedButton(
                       style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                        side: MaterialStateProperty.all(
+                          const BorderSide(color: Colors.black),
+                        ),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
-                          ))),
+                          ),
+                        ),
+                      ),
                       onPressed: () {
-                        print("ety");
+                        print("Register button pressed");
                       },
-                      child: Text(
+                      child: const Text(
                         "Register",
-                        style: TextStyle(
-                            color: const Color.fromARGB(255, 0, 140, 255)),
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 0, 140, 255)),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 60),
-              Text(
+              const SizedBox(height: 60),
+              const Text(
                 "Username or Email",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              // add some space between the buttons and input zone
+              const SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 234, 229, 229),
+                  color: const Color.fromARGB(255, 247, 247, 247),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Username",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: InputBorder.none),
-                      ),
-                    ),
-                  ],
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: "Username",
+                    hintStyle: TextStyle(color: Colors.grey),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(10),
+                  ),
                 ),
               ),
-              SizedBox(height: 60),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 "Password",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              // add some space between the buttons and input zone
+              const SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 234, 229, 229),
+                  color: const Color.fromARGB(255, 247, 247, 247),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Password",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: InputBorder.none),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                height: 50,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color.fromARGB(255, 0, 140, 255)),
-                child: Center(
-                  child: Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 15),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    hintStyle: TextStyle(color: Colors.grey),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(10),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 40,
+              const SizedBox(height: 40),
+              Container(
+                margin: const EdgeInsets.only(left: 10, right: 10, top: 20),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    fixedSize: MaterialStateProperty.all(const Size(400, 50)),
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color.fromARGB(255, 0, 140, 255),
+                    ),
+                  ),
+                  onPressed: () {
+                    Future.delayed(
+                        const Duration(milliseconds: 2000), _navigateToHome);
+                  },
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
               ),
-              Text(
+              const SizedBox(height: 40),
+              const Text(
                 "----------------------------Or-------------------------",
                 style: TextStyle(color: Colors.grey),
               ),
-              SizedBox(
-                height: 80,
-              ),
+              const SizedBox(height: 80),
               Row(
-                children: <Widget>[
-                  SizedBox(
-                    height: 45,
-                  ),
+                children: [
                   Expanded(
                     child: Container(
                       height: 50,
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 255, 255, 255)),
-                      child: Center(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                      ),
+                      child: const Center(
                         child: Text(
                           "Login with Google",
                           style: TextStyle(
@@ -186,27 +201,29 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 45,
-                  ),
+                  const SizedBox(width: 10),
                   Expanded(
-                      child: Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                              borderRadius: BorderRadius.circular(10),
-                              color: const Color.fromARGB(255, 0, 140, 255)),
-                          child: Center(
-                            child: Text(
-                              "Login with Facebook",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          )))
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromARGB(255, 0, 140, 255),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Login with Facebook",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
