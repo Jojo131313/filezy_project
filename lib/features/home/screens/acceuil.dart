@@ -12,11 +12,15 @@ class Acceuil extends StatelessWidget {
               children: [
                 Text(
                   "My Files",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 250),
-                  child: Icon(Icons.notifications),
+                  child: Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
